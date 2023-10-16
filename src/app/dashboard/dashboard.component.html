@@ -1,0 +1,17 @@
+<!-- CONTENEDOR -->
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer [opened]="showSidebar" #drawer class="example-sidenav" mode="side" position="start">
+  
+    <app-sidebar></app-sidebar>
+
+  </mat-drawer>
+
+  <app-toolbar (toggleSidebar)="showSidebar = !showSidebar"></app-toolbar>
+  
+<main>
+    <!-- Pantalla de Usuario -->
+    <h2 appHeading>Usuarios</h2>
+    <app-users></app-users>
+</main>
+  
+</mat-drawer-container>

@@ -1,0 +1,44 @@
+<h1 mat-dialog-title>
+    {{ user ? "Editar Usuario" : "Crear usuario" }}
+</h1>
+
+<!-- Formulario Reactivo para cargar los datos del usuario -->
+<div mat-dialog-content>
+    <form [formGroup]="userForm">
+        <div>
+            <div class="w-100">
+                <mat-form-field>
+                    <mat-label>Nombre</mat-label>
+                    <input formControlName="name" matInput>
+                    <mat-error>
+                        {{ userForm.get("name")?.errors | formErrors }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="w-100">
+                <mat-form-field>
+                    <mat-label>Apellido</mat-label>
+                    <input formControlName="lastName" matInput>
+                    <mat-error>
+                        {{ userForm.get("lastName")?.errors | formErrors }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="w-100">
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input formControlName="email" matInput>
+                    <mat-error>
+                        {{ userForm.get("email")?.errors | formErrors }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Botones de Accion -->
+<div mat-dialog-actions>
+    <button mat-dialog-close mat-flat-button color="warn">Cancelar</button>
+    <button (click)="onSubmit()" mat-flat-button color="accent">Guardar</button>
+</div>

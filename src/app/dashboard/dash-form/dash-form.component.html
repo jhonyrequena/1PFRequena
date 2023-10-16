@@ -1,0 +1,29 @@
+<form [formGroup]="userForm">
+    <div class="campos">
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input formControlName="name" matInput>
+            <mat-error>Campo Obligatorio</mat-error>
+            <mat-hint>Debe tener al menos 3 caracteres</mat-hint>
+        </mat-form-field>
+    </div>
+    
+    <div class="campos">
+        <mat-form-field>
+            <mat-label>Apellido</mat-label>
+            <input formControlName="lastName" matInput>
+            <mat-error>Campo Obligatorio</mat-error>
+            <mat-hint>Debe tener al menos 3 caracteres</mat-hint>
+        </mat-form-field>
+    </div>
+
+    <div class="campos">
+    <mat-form-field>
+        <mat-label>Select</mat-label>
+        <mat-select>
+          <mat-option value="femenino">Femenino</mat-option>
+          <mat-option value="masculino">Masculino</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>  
+</form>
