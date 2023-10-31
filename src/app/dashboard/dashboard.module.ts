@@ -17,7 +17,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MatListModule } from '@angular/material/list';
 import { SharedModule } from '../shared/shared.module';
 import { MatMenuModule } from '@angular/material/menu';
-
+import { RouterModule } from '@angular/router';
+import { CursosModule } from './pages/cursos/cursos.module';
 
 
 @NgModule({
@@ -37,6 +38,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatListModule,
     MatMenuModule,
     SharedModule,
+    RouterModule,
+    CursosModule,
     ],
   exports: [DashboardComponent],
 })

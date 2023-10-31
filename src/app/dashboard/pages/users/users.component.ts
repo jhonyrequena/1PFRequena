@@ -6,9 +6,11 @@ import { User } from './models';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  styleUrls: ['./users.component.css'],
 })
+
 export class UsersComponent {
+
   userName = '';
 
   users: User[]= [
@@ -81,7 +83,7 @@ export class UsersComponent {
     });
   }
 
-  onDeleteUser(userId: number): void{
+  onDeleteUser(userId: number): void {
     if (confirm('Borrar Usuario, Esta seguro?')){
 
       //Filtra el usuario a eliminar
@@ -94,3 +96,10 @@ export class UsersComponent {
     }
   }
 }
+
+function openUsersDialog() {
+  throw new Error('Function not implemented.');
+}
+
+  
+

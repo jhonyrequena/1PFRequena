@@ -1,0 +1,8 @@
+<!-- <router-outlet></router-outlet> -->
+<body>
+    <h2>Cursos</h2>
+    <div class="d-flex justify-content-end m-3">
+        <button mat-flat-button color="primary">Crear Curso</button>
+    </div>
+    <app-cursos-table [dataSource]="(cursos$ | async) || []"></app-cursos-table>
+</body>

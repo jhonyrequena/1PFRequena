@@ -1,3 +1,13 @@
+body {
+    width: 100vw;
+    height: auto;
+}
+
+h2{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
 
 button{
     margin: 0 0 30px 30px;

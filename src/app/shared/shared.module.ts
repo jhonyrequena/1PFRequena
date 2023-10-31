@@ -11,16 +11,13 @@ import { MatTableModule } from '@angular/material/table';
 import { FullnamePipe } from './pipes/fullname.pipe';
 import { FormErrorsPipe } from './pipes/form-errors.pipe';
 import { HeadingDirective } from './directives/heading.directive';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
 
 @NgModule({
-  declarations: [
-    FullnamePipe,
-    FormErrorsPipe,
-    HeadingDirective
-  ],
+  declarations: [FullnamePipe, FormErrorsPipe, HeadingDirective],
   imports: [
     CommonModule
   ],
@@ -33,6 +30,7 @@ import { HeadingDirective } from './directives/heading.directive';
     MatFormFieldModule,
     MatDialogModule,
     MatTableModule,
+    MatSelectModule,
     FormErrorsPipe,
     FullnamePipe,
     HeadingDirective,
