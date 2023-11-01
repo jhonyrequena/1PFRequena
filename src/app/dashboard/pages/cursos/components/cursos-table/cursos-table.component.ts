@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Curso } from '../../model/curso_interface';
 
 @Component({
@@ -10,6 +10,10 @@ export class CursosTableComponent {
 
     @Input()
     dataSource: Curso[] = [];
+
+    @Output()
+    editCurso = new EventEmitter();
+    deleteCurso = new EventEmitter();
 
     displayedColumns = [ 'id', 'name', 'startDate', 'endDate', 'duration', 'actions' ]
 }

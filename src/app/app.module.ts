@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { RouterModule } from '@angular/router';
 import { CoreModule } from './core/core.module';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CoreModule } from './core/core.module';
     DashboardModule,
     RouterModule,
     CoreModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -59,13 +59,7 @@ export class UsersComponent {
           //Asigna el nuevo ID
           const newId = maxId + 1;
 
-          this.users = [
-            ...this.users,
-            {
-            ...v,
-            id: newId,
-            },
-          ];
+          this.users = [...this.users, {...v, id: newId}];
         }
       },
     });

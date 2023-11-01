@@ -35,11 +35,11 @@ import { CursosModule } from './pages/cursos/cursos.module';
     MatInputModule,
     ReactiveFormsModule,
     UsersModule,
+    CursosModule,
     MatListModule,
     MatMenuModule,
     SharedModule,
     RouterModule,
-    CursosModule,
     ],
   exports: [DashboardComponent],
 })
