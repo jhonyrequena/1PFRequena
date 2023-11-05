@@ -4,6 +4,7 @@ import { UsersComponent } from './users.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { DialogUsersComponent } from './components/dialog-users/dialog-users.component';
 import { UsersTableComponent } from './components/users-table/users-table.component';
+import { UsersRoutingModule } from './users-routing.module';
 
 
 
@@ -11,7 +12,8 @@ import { UsersTableComponent } from './components/users-table/users-table.compon
   declarations: [UsersComponent, DialogUsersComponent, UsersTableComponent],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    UsersRoutingModule
   ],
   exports: [UsersComponent]
 })

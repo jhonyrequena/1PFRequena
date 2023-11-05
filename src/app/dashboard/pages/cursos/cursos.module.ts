@@ -4,6 +4,7 @@ import { CursosComponent } from './cursos.component';
 import { CursosTableComponent } from './components/cursos-table/cursos-table.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CursosDialogComponent } from './components/cursos-dialog/cursos-dialog.component';
+import { CursosRoutingModule } from './cursos-routing.module';
 
 
 
@@ -16,6 +17,7 @@ import { CursosDialogComponent } from './components/cursos-dialog/cursos-dialog.
   imports: [
     CommonModule,
     SharedModule,
+    CursosRoutingModule
   ],
   providers: [],
 })

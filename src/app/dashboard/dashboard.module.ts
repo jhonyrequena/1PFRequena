@@ -11,14 +11,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UsersModule } from './pages/users/users.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MatListModule } from '@angular/material/list';
 import { SharedModule } from '../shared/shared.module';
 import { MatMenuModule } from '@angular/material/menu';
-import { RouterModule } from '@angular/router';
-import { CursosModule } from './pages/cursos/cursos.module';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 
 
 @NgModule({
@@ -34,12 +32,10 @@ import { CursosModule } from './pages/cursos/cursos.module';
     MatSelectModule,
     MatInputModule,
     ReactiveFormsModule,
-    UsersModule,
-    CursosModule,
     MatListModule,
     MatMenuModule,
     SharedModule,
-    RouterModule,
+    DashboardRoutingModule,
     ],
   exports: [DashboardComponent],
 })

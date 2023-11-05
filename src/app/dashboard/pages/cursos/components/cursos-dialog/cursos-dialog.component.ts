@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CursosService } from '../../cursos.service';
 
@@ -10,7 +10,7 @@ import { CursosService } from '../../cursos.service';
 })
 export class CursosDialogComponent {
 
-  nameControl = new FormControl();
+  nameControl = new FormControl("", Validators.required);
   startDateControl = new FormControl();
   endDateControl = new FormControl();
 
