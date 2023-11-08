@@ -1,7 +1,5 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { HomeComponent } from "./pages/home/home.component";
-import { UsersComponent } from "./pages/users/users.component";
 import { AlumnosComponent } from "./pages/alumnos/alumnos.component";
 import { InscripcionesComponent } from "./pages/inscripciones/inscripciones.component";
 import { DashboardComponent } from "./dashboard.component";
@@ -31,7 +29,7 @@ import { DashboardComponent } from "./dashboard.component";
                         path: 'inscripciones', component: InscripcionesComponent,
                     },
                     {
-                        path: '**', redirectTo: 'home',
+                        path: '**', redirectTo: 'auth',
                     }
                 ]
             }

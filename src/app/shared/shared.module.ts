@@ -13,6 +13,7 @@ import { FormErrorsPipe } from './pipes/form-errors.pipe';
 import { HeadingDirective } from './directives/heading.directive';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -36,6 +37,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     FullnamePipe,
     HeadingDirective,
     MatDatepickerModule,
+    MatSnackBarModule
   ]
 })
 export class SharedModule { }

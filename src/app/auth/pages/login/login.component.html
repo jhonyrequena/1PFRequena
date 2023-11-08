@@ -1,2 +1,18 @@
-<h2 class="d-flex justify-content-center">Login</h2>
-<button (click)="login()" mat-flat-button color="primary">Iniciar Sesión</button>
+<main>
+    <div>
+        <img class="d-flex justify-content-center" src="./assets/img/usuario.png" alt="">
+    </div>
+    <h2 class="d-flex justify-content-center">Iniciar Sesión</h2>
+    <form [formGroup]="loginForm">
+    <mat-form-field class="w-100">
+        <mat-label>email</mat-label>
+        <input formControlName="email" matInput type="email" autocomplete="off">
+    </mat-form-field>
+    <mat-form-field class="w-100">
+        <mat-label>password</mat-label>
+        <input formControlName="password" matInput type="password" autocomplete="off">
+    </mat-form-field>
+        <button class="w-100 button" (click)="login()" mat-raised-button color="primary" [disabled]="loginForm.invalid">Login</button>
+    </form>
+</main>
+

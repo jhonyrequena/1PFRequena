@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "email": "requena@mail.com",
+            "id": 1,
+            "name": "admin",
+            "lastName": "admin",
+            "password": 123456,
+            "role": "ADMIN",
+            "token": "jhuygfdfsdf25454mjugfh225uhjhgn"
+        }
+    ],
+
+    "cursos": [],
+    "alumnos": []
+}
