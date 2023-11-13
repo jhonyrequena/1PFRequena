@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import { User } from 'src/app/dashboard/pages/users/models';
 import { environment } from 'src/environments/environment.local';
 import { loginPayload } from '../models';
@@ -30,14 +30,28 @@ export class AuthService {
 
           const authUser = response[0];
           this._authUser$.next(authUser);
-
+          localStorage.setItem('token', authUser.token);
           this.router.navigate(['/dashboard/home'])
         }
       },
     });
   }
 
-  //aca me faltaria agregar la logica para guardar el localstorage
+  //aca la logica para guardar el localstorage
+  checkToken(): Observable<boolean>{
+    return this.httpClient.get<User[]>(`${environment.baseUrl}/users?token=${localStorage.getItem('token')}`)
+    .pipe(
+      map((users) => {
+        if (!users.length){
+          return false;
+        } else {
+          const authUser = users[0];
+          localStorage.setItem('token', authUser.token);
+          return true;
+        }
+      })
+    )
+  };
 
   //Metodo para salir de la sesion
   logout(): void {

@@ -14,7 +14,7 @@ export class UsersComponent {
   userName = '';
 
   users: User[]= [
-    {
+    /*{
       id: 1,
       name: 'Bart',
       lastName: 'Simpson',
@@ -43,7 +43,7 @@ export class UsersComponent {
       name: 'Maggie',
       lastName: 'Simpson',
       email: 'simpsonmaggie@mail.com'
-    }
+    }*/
   ]
 
   constructor(private matDialog: MatDialog){}
