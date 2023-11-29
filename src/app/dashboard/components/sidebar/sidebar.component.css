@@ -1,31 +1,47 @@
-body {
-    width: 100vw;
-    height: auto;
+.sidebar{
+    width: 15vw;
+    height: 95%;
+    background-color: #5c96d5;
 }
 
 h2{
     font-size: 1.5em;
     text-align: center;
-    width: 15vw;
     margin-top: 10px;
 }
 
 a{
-    color: rgb(0, 0, 0);
-    font-weight: bold;
+    color: #f2f7fc;
 }
 
 .nav-list{
     margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons{
+    width: 32px;
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
 }
 
 .list-item{
-    background-color: rgb(228, 232, 232);
-    margin-bottom: 15px;
+    background-color: #222f49;
+    margin-bottom: 25px;
     border-radius: 5px;
     text-align: center;
+    width:180px;
+    padding: 35px;
 }
 
 .list-item:hover{
-    background-color: rgb(177, 177, 175);
+    background-color: #314a77;
 }

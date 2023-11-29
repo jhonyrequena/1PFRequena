@@ -10,11 +10,16 @@ export const dashboardGuard: CanActivateFn = (route, state) => {
 
   const router = inject(Router)
   const authService = inject(AuthService);
+
+
+  return authService.checkToken().pipe(map((userAuthenticated) => userAuthenticated ? true : router.createUrlTree(['/auth/login'])
  // const tokenValido = false;
   //return tokenValido ? router.createUrlTree(['/auth']) : true;
-  return authService.authUser$.pipe(
+  /*return authService.authUser$.pipe(
     map((user) => {
       return !!user ? true : router.createUrlTree(['/auth/login']);
     })
+  )*/
+    )
   )
 };
