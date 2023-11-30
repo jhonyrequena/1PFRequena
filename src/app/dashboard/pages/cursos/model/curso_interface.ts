@@ -4,5 +4,4 @@ export interface Curso {
     startDate: Date;
     endDate: Date;
     duration: number;
-    //description: string;
   }

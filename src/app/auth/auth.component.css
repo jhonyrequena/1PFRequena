@@ -1,13 +1,21 @@
 main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #222f49;
     width: 100%;
     height: 100vh;
 }
 
 .login{
-    width: 350px;
+    width: 25vw;
     height: auto;
     background-color: #e9edf5;
     color: #222f49;
 }
 
+.logo{
+    width: 20vw;
+    padding-bottom: 20px;
+}

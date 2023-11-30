@@ -11,11 +11,13 @@ import { CursosService } from '../../cursos.service';
 export class CursosDialogComponent {
 
   nameControl = new FormControl("", Validators.required);
+  durationControl = new FormControl("", Validators.required);
   startDateControl = new FormControl();
   endDateControl = new FormControl();
 
   cursoForm = new FormGroup({
     name: this.nameControl, 
+    duration: this.durationControl,
     startDate: this.startDateControl,
     endDate: this.endDateControl,
   });
@@ -25,7 +27,7 @@ export class CursosDialogComponent {
     private cursosService: CursosService,
     @Inject(MAT_DIALOG_DATA) private cursoId?: number
     ){
-      if (cursoId){
+      /*if (cursoId){
         this.cursosService.getCursoById$(cursoId).subscribe({
           next: (curso) => {
             if (curso) {
@@ -33,7 +35,7 @@ export class CursosDialogComponent {
             }
           }
         })
-      }
+      }*/
     }
     
   onSubmit(): void {

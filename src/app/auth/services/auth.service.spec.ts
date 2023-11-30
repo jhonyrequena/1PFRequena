@@ -1,11 +1,14 @@
-import { TestBed } from "@angular/core/testing";
-import { AuthService } from "./auth.service"
 import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
+import { TestBed } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
+import { AuthService } from "./auth.service"
+import { User } from "src/app/dashboard/pages/users/models";
+import { environment } from "src/environments/environment.local";
 import { MockProvider } from "ng-mocks";
 import { Router } from "@angular/router";
-import { environment } from "src/environments/environment.local";
-import { User } from "src/app/dashboard/pages/users/models";
+import { provideMockStore } from "@ngrx/store/testing";
+import { State } from 'src/app/store/auth/auth.reducer';
+import { selectAuthUser } from "src/app/store/auth/auth.selectors";
 
 
 describe('AuthService', () => {
@@ -15,10 +18,22 @@ describe('AuthService', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule, RouterTestingModule],
-            providers: [MockProvider(Router)]
-        });
+            providers: [MockProvider(Router), 
+            provideMockStore<State>({
+                initialState: {
+                    authUser: null,
+                },
+                selectors: [
+                    {
+                        selector: selectAuthUser,
+                        value: null,
+                    },
+                 ],
+            }),
+          ],
+      });
 
-        authService = TestBed.inject(AuthService);
+        authService = TestBed.inject(AuthService),
         httpController = TestBed.inject(HttpTestingController)
     });
 

@@ -1,16 +1,60 @@
 {
-    "users": [
-        {
-            "email": "requena@mail.com",
-            "id": 1,
-            "name": "admin",
-            "lastName": "admin",
-            "password": 123456,
-            "role": "ADMIN",
-            "token": "jhuygfdfsdf25454mjugfh225uhjhgn"
-        }
-    ],
-
-    "cursos": [],
-    "alumnos": []
+  "users": [
+    {
+      "email": "requena@mail.com",
+      "id": 1,
+      "name": "Jhonys",
+      "lastName": "Requena",
+      "password": 123456,
+      "role": "ADMIN",
+      "token": "jhuygfdfsdf25454mjugfh225uhjhgn"
+    },
+    {
+      "id": 2,
+      "email": "montenegro@mail.com",
+      "name": "Rosalba",
+      "lastName": "Montenegro",
+      "password": 123456,
+      "role": "EMPLOYEE",
+      "token": "jh256fdfs5DKD454mjugfh225uhjUJn"
+    }
+  ],
+  "cursos": [
+    {
+      "id": 1,
+      "name": "Certificación en Seguridad Informática",
+      "startDate": "2023-11-27T03:00:00.000Z",
+      "endDate": "2023-12-18T03:00:00.000Z",
+      "duration": 40
+    },
+    {
+      "name": "Javascript",
+      "duration": "52",
+      "startDate": "2023-11-29T03:00:00.000Z",
+      "endDate": "2024-03-29T03:00:00.000Z",
+      "id": 2
+    },
+    {
+      "name": "Desarrollo Web",
+      "duration": "72",
+      "startDate": "2024-01-15T03:00:00.000Z",
+      "endDate": "2024-04-30T03:00:00.000Z",
+      "id": 3
+    }
+  ],
+  "alumnos": [
+    {
+      "id": 1,
+      "email": "mariano@mail.com",
+      "name": "Mariano",
+      "lastName": "Torres"
+    }
+  ],
+  "inscripciones": [
+    {
+      "id": 1,
+      "cursoId": 3,
+      "alumnoId": 1
+    }
+  ]
 }

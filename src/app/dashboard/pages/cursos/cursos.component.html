@@ -1,4 +1,3 @@
-<!-- <router-outlet></router-outlet> -->
 <body>
     <h2>Cursos</h2>
     <div class="d-flex justify-content-end m-3">
@@ -6,7 +5,7 @@
     </div>
 
     <app-cursos-table [dataSource]="(cursos$ | async) || []"
-    (deleteCurso)="deleteCurso($event)"
-    (editCurso)="editCurso($event)"
+    (deleteCurso)="toDeleteCurso($event)"
+    (editCurso)="toEditCurso($event)"
     ></app-cursos-table>
 </body>

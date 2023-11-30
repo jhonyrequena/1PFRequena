@@ -12,8 +12,10 @@ export class CursosTableComponent {
     dataSource: Curso[] = [];
 
     @Output()
-    editCurso = new EventEmitter();
-    deleteCurso = new EventEmitter();
+    editCurso = new EventEmitter<Curso>();
+
+    @Output()
+    deleteCurso = new EventEmitter<number>();
 
     displayedColumns = [ 'id', 'name', 'startDate', 'endDate', 'duration', 'actions' ]
 }

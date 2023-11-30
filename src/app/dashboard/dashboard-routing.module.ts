@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { AlumnosComponent } from "./pages/alumnos/alumnos.component";
-import { InscripcionesComponent } from "./pages/inscripciones/inscripciones.component";
 import { DashboardComponent } from "./dashboard.component";
+import { adminGuard } from "../core/guards/admin.guard";
+import { HomeComponent } from "./pages/home/home.component";
 
 @NgModule({
     imports: [
@@ -11,11 +11,11 @@ import { DashboardComponent } from "./dashboard.component";
                 path: '', component: DashboardComponent,
                 children: [
                     {
-                        path: 'home',
-                        loadChildren: () => import('./pages/home/home.module').then((mod) => mod.HomeModule)
+                        path: 'home', component: HomeComponent,
                     },
                     {
                         path: 'users',
+                        canActivate: [adminGuard],
                         loadChildren: () => import('./pages/users/users.module').then((mod) => mod.UsersModule)
                     },
                     {
@@ -23,13 +23,15 @@ import { DashboardComponent } from "./dashboard.component";
                         loadChildren: () => import ('./pages/cursos/cursos.module').then((mod) => mod.CursosModule)
                     },
                     {
-                        path: 'alumnos', component: AlumnosComponent,
+                        path: 'alumnos',
+                        loadChildren: () => import ('./pages/alumnos/alumnos.module').then((mod) => mod.AlumnosModule)
                     },
                     {
-                        path: 'inscripciones', component: InscripcionesComponent,
+                        path: 'inscripciones',
+                        loadChildren: () => import('./pages/inscripciones/inscripciones.module').then((mod) => mod.InscripcionesModule)
                     },
                     {
-                        path: '**', redirectTo: 'auth',
+                        path: '**', redirectTo: 'home',
                     }
                 ]
             }

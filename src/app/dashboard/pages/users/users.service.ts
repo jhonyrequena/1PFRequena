@@ -1,0 +1,34 @@
+import { Injectable } from "@angular/core";
+import { User } from "./models";
+import { HttpClient } from "@angular/common/http";
+import { Observable, concatMap } from "rxjs";
+import { environment } from "src/environments/environment.local";
+
+
+@Injectable({
+    providedIn: 'root',
+})
+export class UsersService {
+    constructor (private httpClient: HttpClient) {}
+
+    //Obtener (listar) usuarios desde la base de datos
+    getUsers(): Observable<User[]> {
+        return this.httpClient.get<User[]>(`${environment.baseUrl}/users`);
+    }
+
+    //Crear un usuario nuevo
+    createUser(payload: User): Observable<User[]> {
+        return this.httpClient.post<User>(`${environment.baseUrl}/users`, payload).pipe(concatMap(() => this.getUsers()))
+    }
+
+    //Actualizar o editar un Usuario
+    editUser(userId: number, payload: User): Observable<User[]> {
+        return this.httpClient.put<User>(`${environment.baseUrl}/users/${userId}`, payload).pipe(concatMap(() => this.getUsers()
+        ));
+    }
+
+    //Eliminar un Usuario
+    deleteUser(id: number): Observable<User[]> {
+        return this.httpClient.delete<Object>(`${environment.baseUrl}/users/${id}`).pipe(concatMap(() => this.getUsers()));
+    }
+}

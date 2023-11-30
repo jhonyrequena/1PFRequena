@@ -1,13 +1,13 @@
 .sidebar{
     width: 15vw;
-    height: 95%;
+    height: 100vh;
     background-color: #5c96d5;
 }
 
 h2{
     font-size: 1.5em;
     text-align: center;
-    margin-top: 10px;
+    
 }
 
 a{

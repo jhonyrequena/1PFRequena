@@ -1,9 +1,12 @@
  <!-- Pantalla de Usuario -->
  <h2 appHeading>Usuarios</h2>
 
-<button class="margin" (click)="openUsersDialog()" mat-flat-button color="accent">
+<button class="margin" (click)="addUser()" mat-flat-button color="accent">
     <mat-icon>add</mat-icon>
     Crear usuario
 </button>
 
-<app-users-table [dataSource]="users" (editUser)="onEditUser($event)" (deleteUser)="onDeleteUser($event)"></app-users-table>
+<app-users-table [dataSource]="(users$ | async) || []"
+(editUser)="toEditUser($event)"
+(deleteUser)="toDeleteUser($event)"
+></app-users-table>

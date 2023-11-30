@@ -15,42 +15,44 @@ export class CursosComponent {
 
  cursos$: Observable<Curso[]>;
 
-  constructor (private cursosService: CursosService, private matDialog: MatDialog) {
-
-    this.cursos$ = this.cursosService.getCursos$();
+  constructor (
+    private cursosService: CursosService, 
+    private matDialog: MatDialog
+    ) {
+    this.cursos$ = this.cursosService.getCursos();
   }
 
+//Metodo para Agregar un curso
   addCourse(): void {
-    
     this.matDialog.open(CursosDialogComponent).afterClosed().subscribe({
       next: (result) => {
-        if (result) {
-          this.cursos$ = this.cursosService.createCurso$({
-            id: Math.floor(Math.random()*10+1),
-            name: result.name,
-            startDate: result.startDate,
-            endDate: result.endDate,
-            duration: Math.floor(Math.random()*20),
-          });
+        if (!!result) {
+          this.cursos$ = this.cursosService.createCurso(result);
         }
       }
     });
   }
-//En esta parte del codigo tuve que agregar ANY como parte del cursoId 
-//porque me tomaba como error el evento en el componente HTML
-  deleteCurso(cursoId: number | any): void {
-    this.cursos$ = this.cursosService.deleteCurso$(cursoId);
-  }
 
-  editCurso(cursoId: number | any): void {
+  //Metodo para editar un curso
+  toEditCurso(curso: Curso): void {
     this.matDialog.open(CursosDialogComponent, {
-      data: cursoId,
+      data: curso,
     }).afterClosed().subscribe({
       next: (result) => {
         if (!!result){
-          this.cursos$ = this.cursosService.editCurso$(cursoId, result);
+          this.cursos$ = this.cursosService.editCurso(curso.id, result);
         }
       }
     });
   }
+
+//Metodo para eliminar un curso
+  toDeleteCurso(id: number): void {
+    if (confirm('Se eliminara este curso, estas seguro?')){
+      this.cursos$ = this.cursosService.deleteCurso(id);
+    }
+  }
+
+  // Función para mostrar alerta
+  
 }
