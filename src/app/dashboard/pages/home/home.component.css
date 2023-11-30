@@ -8,10 +8,12 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
+    margin-top: 20px;
     font-size: 48px;
 }
 
 img{
-    width: 20%;
+    width: 30%;
+    margin: 0 auto;
+    display: flex;
 }

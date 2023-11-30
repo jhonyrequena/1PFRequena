@@ -51,8 +51,8 @@
                 {
                   "replace": "src/environments/environment.local.ts",
                   "with": "src/environments/environment.prod.ts"
-              }
-            ]
+                }
+              ]
             },
             "development": {
               "buildOptimizer": false,
@@ -104,5 +104,10 @@
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ]
   }
 }

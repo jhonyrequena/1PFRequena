@@ -38,7 +38,6 @@ export class AuthService {
           alert('Usuario o Contraseña invalidos')
         } else {
           this.authUserHandle(authUser);
-          console.log(authUser)
           this.router.navigate(['/dashboard/home'])
         }
       },
