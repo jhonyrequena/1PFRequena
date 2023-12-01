@@ -9,8 +9,8 @@
     <!-- Alumno Column -->
     <ng-container class="col-6 w-100" matColumnDef="alumno">
         <th mat-header-cell *matHeaderCellDef> Alumnos </th>
-        <td mat-cell *matCellDef="let inscripcion"> {{ inscripcion.alumno?.name }} </td>
-      </ng-container>
+        <td mat-cell *matCellDef="let inscripcion"> {{ inscripcion.alumno?.name }} {{ inscripcion.alumno?.lastName }} </td>
+    </ng-container>
   
       <!-- Curso Column -->
       <ng-container class="col-6 w-100" matColumnDef="curso">
@@ -22,14 +22,14 @@
     <ng-container class="col-6 w-100" matColumnDef="actions">
       <th  mat-header-cell *matHeaderCellDef> Acciones </th>
   
-      <!-- <td  mat-cell *matCellDef="let user">
-        <button [disabled]="(userRole$ | async) !== 'ADMIN'" (click)="editUser.emit(user)" mat-icon-button color="primary">
+      <td  mat-cell *matCellDef="let inscripcion">
+        <button  mat-icon-button color="primary">
           <mat-icon>edit</mat-icon>
         </button>
-        <button [disabled]="(userRole$ | async) !== 'ADMIN'" (click)="deleteUser.emit(user.id)" mat-icon-button color="warn">
+        <button  mat-icon-button color="warn">
           <mat-icon>delete</mat-icon>
         </button>
-      </td> -->
+      </td>
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

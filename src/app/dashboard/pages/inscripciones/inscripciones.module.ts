@@ -8,13 +8,15 @@ import { InscripcionEffects } from './store/inscripcion.effects';
 import { inscripcionFeature } from './store/inscripcion.reducer';
 import { StoreModule } from '@ngrx/store';
 import { InscripcionesTableComponent } from './components/inscripciones-table/inscripciones-table.component';
+import { DialogInscripcionComponent } from './components/dialog-inscripcion/dialog-inscripcion.component';
 
 
 
 @NgModule({
   declarations: [
     InscripcionesComponent,
-    InscripcionesTableComponent
+    InscripcionesTableComponent,
+    DialogInscripcionComponent
   ],
   imports: [
     CommonModule,

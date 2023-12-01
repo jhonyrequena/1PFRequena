@@ -1,0 +1,25 @@
+<div mat-dialog-content>
+    <h2 mat-dialog-title>Inscripción</h2>
+    <form class="row">
+        <div class="col-6">
+            <mat-form-field class="w-100">
+                <mat-label>Curso</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let curso of cursoOption$ | async">{{ curso.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-6">
+            <mat-form-field class="w-100">
+                <mat-label>Alumno</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let alumno of alumnoOption$ | async">{{ alumno.name}} {{ alumno.lastName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-flat-button type="button" color="warn">Cancelar</button>
+    <button mat-flat-button type="button" color="primary">Crear</button>
+</div>

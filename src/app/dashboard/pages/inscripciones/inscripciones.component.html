@@ -1,4 +1,7 @@
 <main>
-    <h2>Departamento de Inscripciones</h2>
+    <h2 class="d-flex justify-content-center">Departamento de Inscripciones</h2>
+    <div class="d-flex justify-content-end">
+        <button (click)="crearInscripcion()" mat-flat-button color="primary">Crear Inscripcion</button>
+    </div>
     <app-inscripciones-table></app-inscripciones-table>
 </main>
