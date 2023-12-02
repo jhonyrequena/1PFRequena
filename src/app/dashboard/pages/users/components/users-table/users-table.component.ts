@@ -8,9 +8,9 @@ import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
 @Component({
   selector: 'app-users-table',
   templateUrl: './users-table.component.html',
-  styles: [
-  ]
+  styleUrls: ['./users-table.component.css']
 })
+
 export class UsersTableComponent {
   @Input()
 

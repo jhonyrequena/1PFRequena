@@ -40,6 +40,13 @@
       "startDate": "2024-01-15T03:00:00.000Z",
       "endDate": "2024-04-30T03:00:00.000Z",
       "id": 3
+    },
+    {
+      "name": "Angular",
+      "duration": "86",
+      "startDate": "2024-01-08T03:00:00.000Z",
+      "endDate": "2024-04-30T03:00:00.000Z",
+      "id": 4
     }
   ],
   "alumnos": [
@@ -55,6 +62,26 @@
       "id": 1,
       "cursoId": 1,
       "alumnoId": 1
+    },
+    {
+      "cursoId": 2,
+      "alumnoId": 1,
+      "id": 2
+    },
+    {
+      "cursoId": 1,
+      "alumnoId": 1,
+      "id": 3
+    },
+    {
+      "cursoId": 3,
+      "alumnoId": 1,
+      "id": 4
+    },
+    {
+      "cursoId": 4,
+      "alumnoId": 1,
+      "id": 5
     }
   ]
 }

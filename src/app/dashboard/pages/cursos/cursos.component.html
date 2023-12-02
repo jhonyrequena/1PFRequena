@@ -1,9 +1,11 @@
 <body>
     <h2>Cursos</h2>
     <div class="d-flex justify-content-end m-3">
-        <button (click)="addCourse()" mat-flat-button color="primary">Crear Curso</button>
+        <button (click)="addCourse()" mat-flat-button color="primary">
+            <mat-icon>add</mat-icon>
+            Crear Curso
+        </button>
     </div>
-
     <app-cursos-table [dataSource]="(cursos$ | async) || []"
     (deleteCurso)="toDeleteCurso($event)"
     (editCurso)="toEditCurso($event)"

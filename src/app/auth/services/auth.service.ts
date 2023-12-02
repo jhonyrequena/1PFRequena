@@ -36,6 +36,10 @@ export class AuthService {
 
         if(!authUser){
           alert('Usuario o Contraseña invalidos')
+
+        } else if (authUser?.role === 'STUDENT') {
+          alert('Permiso para acceder denegado')
+          
         } else {
           this.authUserHandle(authUser);
           this.router.navigate(['/dashboard/home'])

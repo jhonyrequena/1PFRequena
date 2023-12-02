@@ -1,25 +1,30 @@
 <div mat-dialog-content>
     <h2 mat-dialog-title>Inscripción</h2>
-    <form class="row">
-        <div class="col-6">
-            <mat-form-field class="w-100">
-                <mat-label>Curso</mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let curso of cursoOption$ | async">{{ curso.name}}</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-        <div class="col-6">
-            <mat-form-field class="w-100">
-                <mat-label>Alumno</mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let alumno of alumnoOption$ | async">{{ alumno.name}} {{ alumno.lastName}}</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-    </form>
+    <ng-container *ngIf="isLoading$ |async; else formulario">
+        Cargando...
+    </ng-container>
+    <ng-template #formulario>
+        <form class="row">
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <mat-label>Curso</mat-label>
+                    <mat-select [formControl]="cursoIdControl">
+                        <mat-option [value]="curso.id" *ngFor="let curso of cursoOption$ | async">{{ curso.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <mat-label>Alumno</mat-label>
+                    <mat-select [formControl]="alumnoIdControl">
+                        <mat-option [value]="alumno.id" *ngFor="let alumno of alumnoOption$ | async">{{ alumno.name}} {{ alumno.lastName}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </form>
+    </ng-template>
 </div>
 <div mat-dialog-actions>
-    <button mat-flat-button type="button" color="warn">Cancelar</button>
-    <button mat-flat-button type="button" color="primary">Crear</button>
+    <button mat-dialog-close mat-flat-button type="button" color="warn">Cancelar</button>
+    <button (click)="onSubmit()" mat-flat-button type="button" color="primary">Guardar</button>
 </div>
