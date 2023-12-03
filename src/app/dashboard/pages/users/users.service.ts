@@ -4,6 +4,8 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, concatMap } from "rxjs";
 import { environment } from "src/environments/environment.local";
 
+import { generarStringRandom } from "src/app/shared/token";
+
 
 @Injectable({
     providedIn: 'root',
@@ -18,6 +20,8 @@ export class UsersService {
 
     //Crear un usuario nuevo
     createUser(payload: User): Observable<User[]> {
+
+        payload.token = generarStringRandom(20)
         return this.httpClient.post<User>(`${environment.baseUrl}/users`, 
         payload).pipe(concatMap(() => this.getUsers()))
     }

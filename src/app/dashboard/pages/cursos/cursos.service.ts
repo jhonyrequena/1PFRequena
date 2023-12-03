@@ -24,8 +24,4 @@ export class CursosService {
     deleteCurso (id: number): Observable<Curso[]> {
       return this.httpClient.delete<Object>(`${environment.baseUrl}/cursos/${id}`).pipe(concatMap(() => this.getCursos()));
     }
-
-   /*getCursoById(id: number): Observable<Curso | undefined>{
-      return of (this.cursos.find((curso) => curso.id === id));
-    }*/
 }

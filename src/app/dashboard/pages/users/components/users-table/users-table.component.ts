@@ -22,11 +22,25 @@ export class UsersTableComponent {
   @Output()
   editUser = new EventEmitter<User>();
 
-  displayedColumns = ['id', 'fullname', 'email', 'actions'];
+  displayedColumns = ['id', 'fullname', 'email', 'role', 'actions'];
 
   userRole$: Observable<userRole | undefined>;
 
   constructor(private router: Router, private store: Store){
     this.userRole$ = this.store.select(selectAuthUser).pipe(map((user) => user?.role))
+  }
+
+  //Mapeo de Roles
+  ObtenerNombreRol(rol: string): string{
+    switch (rol) {
+      case 'ADMIN':
+        return 'Administrador';
+      
+      case 'EMPLOYEE':
+        return 'Empleado';
+
+      default:
+        return rol;
+    }
   }
 }

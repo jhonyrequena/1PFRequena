@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CursosService } from '../../cursos.service';
+import { Curso } from '../../model/curso_interface';
 
 @Component({
   selector: 'app-cursos-dialog',
@@ -25,17 +26,11 @@ export class CursosDialogComponent {
   constructor (
     private matDialogRef: MatDialogRef<CursosDialogComponent>,
     private cursosService: CursosService,
-    @Inject(MAT_DIALOG_DATA) private cursoId?: number
+    @Inject(MAT_DIALOG_DATA) public curso?: Curso,
     ){
-      /*if (cursoId){
-        this.cursosService.getCursoById$(cursoId).subscribe({
-          next: (curso) => {
-            if (curso) {
-              this.cursoForm.patchValue(curso);
-            }
-          }
-        })
-      }*/
+      if (this.curso){
+        this.cursoForm.patchValue(this.curso);
+      }
     }
     
   onSubmit(): void {

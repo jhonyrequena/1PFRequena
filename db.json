@@ -17,6 +17,23 @@
       "password": 123456,
       "role": "EMPLOYEE",
       "token": "jh256fdfs5DKD454mjugfh225uhjUJn"
+    },
+    {
+      "name": "Albany",
+      "lastName": "Requena",
+      "password": "22062022",
+      "role": "EMPLOYEE",
+      "email": "albany@mail.com",
+      "id": 3
+    },
+    {
+      "name": "Carlos",
+      "lastName": "Carrion",
+      "password": "789456123",
+      "role": "ADMIN",
+      "email": "alberto@mail.com",
+      "token": "T0Hh6yDAIrQ2KRuvcL7f",
+      "id": 4
     }
   ],
   "cursos": [
@@ -47,6 +64,13 @@
       "startDate": "2024-01-08T03:00:00.000Z",
       "endDate": "2024-04-30T03:00:00.000Z",
       "id": 4
+    },
+    {
+      "name": "React JS",
+      "duration": "86",
+      "startDate": "2024-01-08T03:00:00.000Z",
+      "endDate": "2024-04-30T03:00:00.000Z",
+      "id": 5
     }
   ],
   "alumnos": [

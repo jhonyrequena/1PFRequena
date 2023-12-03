@@ -19,7 +19,9 @@ export class DialogUsersComponent {
     this.userForm = this.formBuilder.group({
       name: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', [Validators.email, Validators.required]],
+      password: ['', Validators.required],
+      role: ['', Validators.required],
+      email: ['', [Validators.email, Validators.required]]
     });
 
     if (this.user){
