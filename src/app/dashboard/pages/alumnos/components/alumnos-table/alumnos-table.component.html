@@ -1,0 +1,38 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <!-- Id Column -->
+    <ng-container class="col-6 w-100" matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let alumno"> {{ alumno.id }} </td>
+    </ng-container>
+  
+    <!-- FullName Column -->
+    <ng-container class="col-6 w-100" matColumnDef="fullname">
+        <th mat-header-cell *matHeaderCellDef> Nombre Completo </th>
+        <td mat-cell *matCellDef="let alumno"> {{ alumno | fullname: 'uppercase' }} </td>
+      </ng-container>
+  
+      <!-- ID Email -->
+    <ng-container class="col-6 w-100" matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let alumno"> {{ alumno.email }} </td>
+    </ng-container>
+  
+      <!-- ID Actions -->
+    <ng-container class="col-6 w-100" matColumnDef="actions">
+      <th  mat-header-cell *matHeaderCellDef> Acciones </th>
+  
+      <td  mat-cell *matCellDef="let alumno">
+        <button [disabled]="(userRole$ | async) !== 'ADMIN'" (click)="editAlumno.emit(alumno)" mat-icon-button color="primary">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button [disabled]="(userRole$ | async) !== 'ADMIN'" (click)="deleteAlumno.emit(alumno.id)" mat-icon-button color="warn">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+  </table>

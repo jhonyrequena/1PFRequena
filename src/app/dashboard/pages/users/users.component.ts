@@ -11,15 +11,19 @@ import { Observable } from 'rxjs';
   styleUrls: ['./users.component.css'],
 })
 
-export class UsersComponent {
+export class UsersComponent{
 
   userName = '';
 
   users$: Observable<User[]>;
 
-  constructor(private matDialog: MatDialog, private usersService: UsersService){
-    this.users$ = this.usersService.getUsers();
+  constructor(
+    private matDialog: MatDialog, 
+    private usersService: UsersService,){
+
+      this.users$ = this.usersService.getUsers();
   }
+
 //Metodo para crear un Usuario
   addUser(): void {
     this.matDialog.open(DialogUsersComponent).afterClosed().subscribe({
@@ -30,6 +34,7 @@ export class UsersComponent {
         }
     });
   }
+
 //Metodo para editar un Usuario
   toEditUser(user: User): void {
     this.matDialog.open(DialogUsersComponent, {
@@ -41,6 +46,7 @@ export class UsersComponent {
       }
     });
   }
+
 //Metodo para Eliminar un Usuario
   toDeleteUser(userId: number): void {
     if (confirm('Borrar Usuario, Esta seguro?')){

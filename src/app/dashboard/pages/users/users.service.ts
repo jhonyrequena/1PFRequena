@@ -18,12 +18,14 @@ export class UsersService {
 
     //Crear un usuario nuevo
     createUser(payload: User): Observable<User[]> {
-        return this.httpClient.post<User>(`${environment.baseUrl}/users`, payload).pipe(concatMap(() => this.getUsers()))
+        return this.httpClient.post<User>(`${environment.baseUrl}/users`, 
+        payload).pipe(concatMap(() => this.getUsers()))
     }
 
     //Actualizar o editar un Usuario
     editUser(userId: number, payload: User): Observable<User[]> {
-        return this.httpClient.put<User>(`${environment.baseUrl}/users/${userId}`, payload).pipe(concatMap(() => this.getUsers()
+        return this.httpClient.put<User>(`${environment.baseUrl}/users/${userId}`, 
+        payload).pipe(concatMap(() => this.getUsers()
         ));
     }
 
