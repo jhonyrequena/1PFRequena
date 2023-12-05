@@ -180,6 +180,11 @@
       "cursoId": 2,
       "alumnoId": 2,
       "id": 8
+    },
+    {
+      "cursoId": 9,
+      "alumnoId": 3,
+      "id": 9
     }
   ]
 }

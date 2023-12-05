@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="(inscripciones$ | async ) || []" class="mat-elevation-z8">
+<table mat-table [dataSource]="(inscripciones$ | async) || []" class="mat-elevation-z8">
   
     <!-- Id Column -->
     <ng-container class="col-6 w-100" matColumnDef="id">
@@ -9,7 +9,9 @@
     <!-- Alumno Column -->
     <ng-container class="col-6 w-100" matColumnDef="alumno">
         <th mat-header-cell *matHeaderCellDef> Alumnos </th>
-        <td mat-cell *matCellDef="let inscripcion"> {{ inscripcion.alumno?.name }} {{ inscripcion.alumno?.lastName }} </td>
+        <td mat-cell *matCellDef="let inscripcion">
+           {{ inscripcion.alumno?.name }} {{ inscripcion.alumno?.lastName }} 
+          </td>
     </ng-container>
   
       <!-- Curso Column -->

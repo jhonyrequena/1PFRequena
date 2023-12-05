@@ -25,7 +25,10 @@ export class AlumnosComponent {
 
   //Crear un alumno Nuevo
   addAlumno(): void {
-    this.matDialog.open(AlumnosDialogComponent).afterClosed().subscribe({
+    this.matDialog.open(AlumnosDialogComponent, {
+      enterAnimationDuration: '500ms',
+      exitAnimationDuration: '500ms',
+    }).afterClosed().subscribe({
       next: (value) => {
         if (!!value) {
           this.alumnos$ = this.alumnosService.createAlumno(value);
@@ -37,7 +40,10 @@ export class AlumnosComponent {
   //Actualizar o Editar un alumno
    toEditAlumno(alumno: Alumno): void {
      this.matDialog.open(AlumnosDialogComponent, {
-       data: alumno,}).afterClosed().subscribe({
+      enterAnimationDuration: '500ms',
+      exitAnimationDuration: '500ms',
+       data: alumno,
+      }).afterClosed().subscribe({
          next: (value) => {
            if (!!value){
              this.alumnos$ = this.alumnosService.editAlumno(alumno.id, value)

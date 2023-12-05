@@ -5,8 +5,8 @@ export interface Inscripcion {
     id: number;
     cursoId: number;
     alumnoId: number;
-    alumno?: Alumno;
-    curso?: Curso;
+    alumno?: Alumno[];
+    curso?: Curso[];
 }
 
 export interface createInscripcionPayload {

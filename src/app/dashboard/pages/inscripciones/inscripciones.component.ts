@@ -13,7 +13,6 @@ import { DialogInscripcionComponent } from './components/dialog-inscripcion/dial
 
 export class InscripcionesComponent {
 
-
   constructor(private store: Store, private matDialog: MatDialog,){
     this.store.dispatch(InscripcionActions.loadInscripcions());
   }
@@ -21,12 +20,4 @@ export class InscripcionesComponent {
   crearInscripcion(): void {
     this.matDialog.open(DialogInscripcionComponent);
   };
-
-  editInscripcion(id: number){
-
-  }
-
-  deleteInscripcion(id: number){
-
-  }
 }

@@ -10,11 +10,14 @@ import { selectInscripciones } from '../../store/inscripcion.selectors';
   styleUrls: ['./inscripciones-table.component.css']
 })
 export class InscripcionesTableComponent {
-  displayedColumns = ['id', 'alumno', 'curso', 'actions'];
+  
 
   inscripciones$: Observable<Inscripcion[]>;
+  
 
-  constructor(private store: Store) {
+  constructor (private store: Store) {
     this.inscripciones$ = this.store.select(selectInscripciones);
   }
+  
+  displayedColumns = ['id', 'alumno', 'curso', 'actions'];
 }

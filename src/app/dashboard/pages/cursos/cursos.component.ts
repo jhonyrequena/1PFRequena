@@ -24,7 +24,10 @@ export class CursosComponent {
 
 //Metodo para Agregar un curso
   addCourse(): void {
-    this.matDialog.open(CursosDialogComponent).afterClosed().subscribe({
+    this.matDialog.open(CursosDialogComponent, {
+      enterAnimationDuration: '500ms',
+      exitAnimationDuration: '500ms'
+    }).afterClosed().subscribe({
       next: (result) => {
         if (!!result) {
           this.cursos$ = this.cursosService.createCurso(result);
@@ -36,6 +39,8 @@ export class CursosComponent {
   //Metodo para editar un curso
   toEditCurso(curso: Curso): void {
     this.matDialog.open(CursosDialogComponent, {
+      enterAnimationDuration: '500ms',
+      exitAnimationDuration: '500ms',
       data: curso,
     }).afterClosed().subscribe({
       next: (result) => {
@@ -51,8 +56,5 @@ export class CursosComponent {
     if (confirm('Se eliminara este curso, estas seguro?')){
       this.cursos$ = this.cursosService.deleteCurso(id);
     }
-  }
-
-  // Función para mostrar alerta
-  
+  }  
 }
