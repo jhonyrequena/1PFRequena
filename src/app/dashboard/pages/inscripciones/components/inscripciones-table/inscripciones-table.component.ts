@@ -15,6 +15,6 @@ export class InscripcionesTableComponent {
   inscripciones$: Observable<Inscripcion[]>;
 
   constructor(private store: Store) {
-    this.inscripciones$ = this.store.select(selectInscripciones)
+    this.inscripciones$ = this.store.select(selectInscripciones);
   }
 }

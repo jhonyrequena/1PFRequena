@@ -3,3 +3,19 @@ p{
     margin: 0 auto;
 }
   
+.logout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logout p{
+    font-size: 10px;
+}
+
+.logout button {
+    width: 72px;
+}
+

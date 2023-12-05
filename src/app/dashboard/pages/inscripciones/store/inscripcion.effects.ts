@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, concatMap } from 'rxjs/operators';
+import { catchError, map, concatMap, mergeMap } from 'rxjs/operators';
 import { Observable, forkJoin, of } from 'rxjs';
 import { InscripcionActions } from './inscripcion.actions';
 import { HttpClient } from '@angular/common/http';
@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment.local';
 import { Inscripcion, createInscripcionPayload } from '../model/inscripcion-model';
 import { Curso } from '../../cursos/model/curso_interface';
 import { Alumno } from '../../alumnos/model/alumno-model';
+import { Store } from '@ngrx/store';
 
 
 @Injectable()
@@ -36,7 +37,7 @@ export class InscripcionEffects {
       catchError((err) => 
         of(InscripcionActions.loadInscripcionsDialogSelectionFailure({ error: err })))
     ))
-  ))
+  ));
 
 
   createInscripcion$ = createEffect(() =>
@@ -50,7 +51,10 @@ export class InscripcionEffects {
     })
   ));
   
-  constructor(private actions$: Actions, private httpClient: HttpClient) {}
+constructor(
+  private actions$: Actions, 
+  private httpClient: HttpClient,
+  private store: Store) {}
 
   createInscripcion(payload: createInscripcionPayload): Observable<Inscripcion>{
     return this.httpClient.post<Inscripcion>(`${environment.baseUrl}/inscripciones`, payload )

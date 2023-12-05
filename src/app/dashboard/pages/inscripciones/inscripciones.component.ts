@@ -9,12 +9,24 @@ import { DialogInscripcionComponent } from './components/dialog-inscripcion/dial
   templateUrl: './inscripciones.component.html',
   styleUrls: ['./inscripciones.component.css']
 })
+
+
 export class InscripcionesComponent {
-  constructor(private store: Store, private matDialog: MatDialog){
-    this.store.dispatch(InscripcionActions.loadInscripcions())
+
+
+  constructor(private store: Store, private matDialog: MatDialog,){
+    this.store.dispatch(InscripcionActions.loadInscripcions());
   }
 
   crearInscripcion(): void {
-    this.matDialog.open(DialogInscripcionComponent)
+    this.matDialog.open(DialogInscripcionComponent);
+  };
+
+  editInscripcion(id: number){
+
+  }
+
+  deleteInscripcion(id: number){
+
   }
 }

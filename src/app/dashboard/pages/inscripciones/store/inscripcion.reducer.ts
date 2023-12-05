@@ -15,6 +15,7 @@ export interface State {
   error: unknown;
 }
 
+
 export const initialState: State = {
   isLoading: false,
   isLoadingDialogSelect: false,

@@ -1,7 +1,6 @@
 .sidebar{
     width: 15vw;
     height: 100vh;
-    background-color: #5c96d5;
 }
 
 h2{
@@ -27,16 +26,16 @@ a{
 }
 
 .list-item{
-    background-color: #222f49;
+    background-color: #161414;
     margin-bottom: 20px;
     margin-left: 5px;
     border-radius: 8px;
     text-align: center;
     display: flex;
     width: 14vw;
-    padding: 35px;
+    padding: 40px;
 }
 
 .list-item:hover{
-    background-color: #314a77;
+    background-color: #110e0e;
 }

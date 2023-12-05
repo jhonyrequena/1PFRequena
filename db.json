@@ -71,6 +71,41 @@
       "startDate": "2024-01-08T03:00:00.000Z",
       "endDate": "2024-04-30T03:00:00.000Z",
       "id": 5
+    },
+    {
+      "name": "Ciberseguridad",
+      "duration": "80",
+      "startDate": "2024-02-01T03:00:00.000Z",
+      "endDate": "2024-05-30T03:00:00.000Z",
+      "id": 6
+    },
+    {
+      "name": "Desarrollo de Aplicaciones",
+      "duration": "96",
+      "startDate": "2024-02-05T03:00:00.000Z",
+      "endDate": "2024-04-29T03:00:00.000Z",
+      "id": 7
+    },
+    {
+      "name": "Typescript",
+      "duration": "70",
+      "startDate": "2024-01-15T03:00:00.000Z",
+      "endDate": "2024-03-18T03:00:00.000Z",
+      "id": 8
+    },
+    {
+      "name": "Python",
+      "duration": "120",
+      "startDate": "2024-01-08T03:00:00.000Z",
+      "endDate": "2024-06-20T03:00:00.000Z",
+      "id": 9
+    },
+    {
+      "name": "Wordpress",
+      "duration": "120",
+      "startDate": "2024-01-22T03:00:00.000Z",
+      "endDate": "2024-06-10T03:00:00.000Z",
+      "id": 10
     }
   ],
   "alumnos": [
@@ -85,6 +120,24 @@
       "lastName": "Moreno",
       "email": "morenomaria@mail.com",
       "id": 2
+    },
+    {
+      "name": "Pablo",
+      "lastName": "Perez",
+      "email": "perezpablo@mail.com",
+      "id": 3
+    },
+    {
+      "name": "Nelson",
+      "lastName": "Tovar",
+      "email": "tovarnelson@mail.com",
+      "id": 4
+    },
+    {
+      "name": "Alicia",
+      "lastName": "Santos",
+      "email": "santosalicia@mail.com",
+      "id": 5
     }
   ],
   "inscripciones": [
@@ -117,6 +170,16 @@
       "cursoId": 3,
       "alumnoId": 2,
       "id": 6
+    },
+    {
+      "cursoId": 5,
+      "alumnoId": 2,
+      "id": 7
+    },
+    {
+      "cursoId": 2,
+      "alumnoId": 2,
+      "id": 8
     }
   ]
 }

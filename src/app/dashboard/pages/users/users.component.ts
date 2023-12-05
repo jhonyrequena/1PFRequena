@@ -26,8 +26,12 @@ export class UsersComponent{
 
 //Metodo para crear un Usuario
   addUser(): void {
-    this.matDialog.open(DialogUsersComponent).afterClosed().subscribe({
+    this.matDialog.open(DialogUsersComponent, {
+      enterAnimationDuration: '500ms',
+      exitAnimationDuration: '500ms'
+    }).afterClosed().subscribe({
       next: (value) => {
+
         if (!!value) {
                 this.users$ = this.usersService.createUser(value);
               }

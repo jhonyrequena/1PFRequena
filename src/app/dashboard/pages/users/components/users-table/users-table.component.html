@@ -21,7 +21,7 @@
 <!-- Role Column -->
 <ng-container class="col-6 w-100" matColumnDef="role">
   <th mat-header-cell *matHeaderCellDef> Categoria </th>
-  <td mat-cell *matCellDef="let user"> {{ ObtenerNombreRol(user.role) }} </td>
+  <td mat-cell *matCellDef="let user"> {{ ObtenerNombreRol(user.role) | uppercase }} </td>
 </ng-container>
 
     <!-- Actions Columns -->

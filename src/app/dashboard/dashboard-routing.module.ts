@@ -11,24 +11,24 @@ import { HomeComponent } from "./pages/home/home.component";
                 path: '', component: DashboardComponent,
                 children: [
                     {
-                        path: 'home', component: HomeComponent,
+                        path: 'home', data: { title: 'Instituto DELTA' }, component: HomeComponent,
                     },
                     {
-                        path: 'users',
+                        path: 'users', data: { title: 'Departamento de Usuarios'},
                         canActivate: [adminGuard],
-                        loadChildren: () => import('./pages/users/users.module').then((mod) => mod.UsersModule)
+                        loadChildren: () => import('./pages/users/users.module').then((mod) => mod.UsersModule),
                     },
                     {
-                        path: 'cursos',
-                        loadChildren: () => import ('./pages/cursos/cursos.module').then((mod) => mod.CursosModule)
+                        path: 'cursos', data: { title: 'Departamento de Cursos'},
+                        loadChildren: () => import ('./pages/cursos/cursos.module').then((mod) => mod.CursosModule),
                     },
                     {
-                        path: 'alumnos',
-                        loadChildren: () => import ('./pages/alumnos/alumnos.module').then((mod) => mod.AlumnosModule)
+                        path: 'alumnos', data: { title: 'Departamento de Alumnos'},
+                        loadChildren: () => import ('./pages/alumnos/alumnos.module').then((mod) => mod.AlumnosModule),
                     },
                     {
-                        path: 'inscripciones',
-                        loadChildren: () => import('./pages/inscripciones/inscripciones.module').then((mod) => mod.InscripcionesModule)
+                        path: 'inscripciones', data: { title: 'Departamento de Inscripciones'},
+                        loadChildren: () => import('./pages/inscripciones/inscripciones.module').then((mod) => mod.InscripcionesModule),
                     },
                     {
                         path: '**', redirectTo: 'home',

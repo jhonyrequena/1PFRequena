@@ -9,6 +9,7 @@ createFeatureSelector<fromInscripcion.State>(
 export const selectInscripciones = createSelector(
   selectInscripcionState, (state)=> state.inscripciones);
 
+
 export const selectInscripcionesisLoading = createSelector(
   selectInscripcionState, (state) => state.isLoading);
 

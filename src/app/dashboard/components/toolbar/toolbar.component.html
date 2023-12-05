@@ -1,12 +1,12 @@
 <!-- CONTENIDO -->
 <main>
     <div>         
-        <mat-toolbar class="d-flex justify-content-between" color="primary">
+        <mat-toolbar class="d-flex justify-content-between">
             <button (click)="toggleSidebar.emit()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
                 <mat-icon>menu</mat-icon>
             </button>
             <span class="example-spacer"></span>
-          <h1>Instituto DELTA</h1>
+          <h1>{{ pageTitle }}</h1>
           <div>
             <p>Bienvenido: 
                 {{ fullName$ | async }}
@@ -14,9 +14,12 @@
                 {{ email$ | async }}
             </p>
           </div>
-          <button (click)="logout()" mat-icon-button>
-            <mat-icon>logout</mat-icon>
-        </button>
+          <div class="logout">
+            <button (click)="logout()" mat-icon-button>
+              <mat-icon>logout</mat-icon>
+              <p>Cerrar <br> Sesion</p>
+            </button>
+          </div>
         </mat-toolbar> 
     </div>
   </main>
